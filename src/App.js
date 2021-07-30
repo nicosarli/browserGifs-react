@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import ListOfGifs from "./components/ListOfGifs";
 
@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <section className="App-content">
-        <ListOfGifs keyword="panda" />
+        <ListOfGifs keyword={"panda"} />
       </section>
     </div>
   );
