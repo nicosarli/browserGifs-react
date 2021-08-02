@@ -11,9 +11,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 16px;
 }
 
-.Card-Gifs {
-  display: flex;
-  flex-direction: column;
+.App-content a {
+  text-decoration: none;
+  color: #fff;
 }
