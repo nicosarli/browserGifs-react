@@ -1,12 +1,22 @@
 .Gifs {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   border: 1px solid #eee;
   border-radius: 6px;
   margin: 16px;
   width: 100%;
   text-decoration: none;
-  color: #fff;
+  color: #fff; */
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+.Gifs-items {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 250px;
 }
 
 .Gifs img {
@@ -15,4 +25,5 @@
 
 i {
   font-size: 80px;
+  text-align: center;
 }

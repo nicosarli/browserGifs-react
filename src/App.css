@@ -3,18 +3,22 @@
 }
 
 .App-content {
-  background-color: #282c34;
+  background: linear-gradient(#282c34 80%, rgb(95, 92, 92));
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fff;
   padding: 16px;
 }
 
 .App-content a {
   text-decoration: none;
   color: #fff;
+}
+
+.App-content-logo {
+  width: 10%;
+  margin-bottom: 40px;
 }
