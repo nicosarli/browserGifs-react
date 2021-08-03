@@ -13,3 +13,12 @@
   height: 300px;
   object-fit: cover;
 }
+
+.Category-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Category-link {
+  margin: 10px;
+}
