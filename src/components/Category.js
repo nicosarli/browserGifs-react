@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "wouter";
 
 const Category = ({ name, options = [] }) => {
-  console.log(options);
   return (
     <div className="Category">
       <h3 className="Category-title">{name}</h3>
