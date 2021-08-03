@@ -1,13 +1,15 @@
+import "./home.css";
 import React, { useState } from "react";
 import { Link, useLocation } from "wouter";
-import "./home.css";
+import useGifs from "../../hooks/useGifs";
+import ListOfGifs from "../../components/ListOfGifs";
 
-const POPULAR_GIFS = ["Matrix", "Avengers", "Batman", "Iron Man", "Cusco"];
+const POPULAR_GIFS = ["avengers", "dc", "marvel", "power ranger"];
 
 export default function Home() {
   const [keyword, setKeyword] = useState("");
   const [path, pushLocation] = useLocation();
-  console.log(path);
+  const { loading, gifs } = useGifs();
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -19,8 +21,8 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <>
+      <form onSubmit={handleSubmit} className="Home-Form">
         <input
           type="text"
           placeholder="Search a gif here..."
@@ -28,14 +30,18 @@ export default function Home() {
           onChange={handleChange}
         />
       </form>
-      <h3 className="Home-title">Los gifs mas populares</h3>
-      <ul>
-        {POPULAR_GIFS.map((popularGifs) => (
-          <li key={popularGifs}>
-            <Link to={`/search/${popularGifs}`}>GIFS de {popularGifs}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+      <h3 className="Home-title">Ultima busqueda: </h3>
+      <ListOfGifs gifs={gifs} />
+      <div className="popularGifs">
+        <h3 className="Home-title">GIFS populares: </h3>
+        <ul>
+          {POPULAR_GIFS.map((popularGif) => (
+            <li key={popularGif}>
+              <Link to={`/search/${popularGif}`}>Gifs de {popularGif}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }

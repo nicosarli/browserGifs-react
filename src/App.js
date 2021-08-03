@@ -6,6 +6,7 @@ import ListOfGifs from "./components/ListOfGifs";
 import Home from "./pages/Home";
 import SearchResults from "./pages/SearchResults";
 import Detail from "./pages/Detail";
+import { GifsContextProvider } from "./context/GifsContext";
 
 function App() {
   return (
@@ -14,10 +15,12 @@ function App() {
         <Link to="/">
           <img src={logo} alt="logo giphy" className="App-content-logo" />
         </Link>
-        <Route component={Home} path="/" />
-        <Route component={SearchResults} path="/search/:keyword" />
-        <Route component={Detail} path="/gif/:id" />
-        <Route component={ListOfGifs} path="/gif/:keyword" />
+        <GifsContextProvider>
+          <Route component={Home} path="/" />
+          <Route component={SearchResults} path="/search/:keyword" />
+          <Route component={Detail} path="/gif/:id" />
+          <Route component={ListOfGifs} path="/gif/:keyword" />
+        </GifsContextProvider>
       </section>
     </div>
   );

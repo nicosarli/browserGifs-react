@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "wouter";
 
 const Gif = ({ id, title, url }) => {
   return (
-    <a href={`#${id}`} className="ListOfGifs-items">
-      <img src={url} alt={title} />
-    </a>
+    <div className="ListOfGifs-items">
+      <Link to={`/gif/${id}`} className="Gif-link">
+        <img src={url} alt={title} />
+      </Link>
+    </div>
   );
 };
 

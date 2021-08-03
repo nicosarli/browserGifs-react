@@ -3,6 +3,7 @@ import Gif from "./Gif";
 import "./styles.css";
 
 const ListOfGifs = ({ gifs }) => {
+  console.log(gifs);
   return (
     <div className="ListOfGifs">
       {gifs.map(({ id, title, url }) => (
