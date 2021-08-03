@@ -2,7 +2,7 @@ import "./home.css";
 import React, { useState } from "react";
 import { useLocation } from "wouter";
 import useGifs from "../../hooks/useGifs";
-import ListOfGifs from "../../components/ListOfGifs";
+import ListOfGifs from "../../components/ListOfGifs/ListOfGifs";
 import TrendingSearches from "../../components/TrendingSearches";
 
 const POPULAR_GIFS = ["avengers", "dc", "marvel", "power ranger"];
