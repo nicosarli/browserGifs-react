@@ -14,13 +14,12 @@ export default function SearchResults({ params }) {
   });
 
   const debouceHandleNextPage = useCallback(
-    debounce(() => setPage((prevPage) => prevPage + 1), 1000),
-    []
+    debounce(() => setPage((prevPage) => prevPage + 1), 200),
+    [setPage]
   );
 
   useEffect(() => {
     if (isNearScreen) debouceHandleNextPage();
-    console.log(isNearScreen);
   }, [debouceHandleNextPage, isNearScreen]);
 
   return (
@@ -29,8 +28,11 @@ export default function SearchResults({ params }) {
         <h1>Cargando...</h1>
       ) : (
         <>
-          <ListOfGifs gifs={gifs} />
-          <div id="visor" ref={externalRef}></div>
+          <div className="search">
+            <h3 className="search-title">{keyword}</h3>
+            <ListOfGifs gifs={gifs} />
+            <div id="visor" ref={externalRef}></div>
+          </div>
         </>
       )}
     </>

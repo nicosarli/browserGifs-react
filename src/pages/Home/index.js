@@ -30,6 +30,7 @@ export default function Home() {
           value={keyword}
           onChange={handleChange}
         />
+        <button>Search</button>
       </form>
       <h3 className="Home-title">Ultima busqueda: </h3>
       <ListOfGifs gifs={gifs} />
