@@ -29,7 +29,7 @@ export default function SearchResults({ params }) {
       ) : (
         <>
           <div className="search">
-            <h3 className="search-title">{keyword}</h3>
+            <h3 className="search-title">{decodeURI(keyword)}</h3>
             <ListOfGifs gifs={gifs} />
             <div id="visor" ref={externalRef}></div>
           </div>
