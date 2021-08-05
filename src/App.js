@@ -19,7 +19,7 @@ function App() {
           </Link>
           <GifsContextProvider>
             <Route component={HomePage} path="/" />
-            <Route component={SearchResults} path="/search/:keyword" />
+            <Route component={SearchResults} path="/search/:keyword/:rating?" />
             <Route component={Detail} path="/gif/:id" />
             <Route component={ListOfGifs} path="/gif/:keyword" />
             <Route component={() => <h1> 404 ERROR :( </h1>} path="/404" />
