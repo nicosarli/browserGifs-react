@@ -1,24 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import { useLocation } from "wouter";
+import useForm from "./hook";
 
 const RATINGS = ["g", "pg", "pg-13", "r"];
 
-const SearchForm = () => {
-  const [keyword, setKeyword] = useState("");
+const SearchForm = ({ initialKeyword = "", initialRating = "g" }) => {
+  const { keyword, times, rating, updateKeyword, updateRating } = useForm({
+    initialKeyword,
+    initialRating,
+  });
+
   const [path, pushLocation] = useLocation();
-  const [rating, setRating] = useState(RATINGS[0]);
+
+  const handleChange = (evt) => {
+    updateKeyword(evt.target.value);
+  };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     pushLocation(`/search/${keyword}/${rating}`);
   };
 
-  const handleChange = (evt) => {
-    setKeyword(evt.target.value);
-  };
-
   const handleChangeRating = (evt) => {
-    setRating(evt.target.value);
+    updateRating(evt.target.value);
   };
 
   return (
@@ -36,6 +40,7 @@ const SearchForm = () => {
           <option key={rating}>{rating}</option>
         ))}
       </select>
+      <small>{times}</small>
     </form>
   );
 };

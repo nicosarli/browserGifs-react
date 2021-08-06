@@ -37,11 +37,11 @@ export default function SearchResults({ params }) {
             <title>{title}</title>
             <meta name="description" content={title} />
           </Helmet>
-          <SearchForm />
+          <SearchForm initialKeyword={keyword} initialRating={rating}/>
           <div className="search">
             <h3 className="search-title">{decodeURI(keyword)}</h3>
             <ListOfGifs gifs={gifs} />
-            <div id="visor" ref={externalRef}></div>
+            <div id="visor" ref={externalRef} />
           </div>
         </>
       )}
