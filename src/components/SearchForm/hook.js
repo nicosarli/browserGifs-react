@@ -26,7 +26,10 @@ const reducer = (state, action) => {
   }
 }
 
-const useForm = ({ initialKeyword, initialRating }) => {
+const useForm = ({ 
+  initialKeyword = '', 
+  initialRating = 'g'
+ } = {}) => {
   const [state, dispatch] = useReducer(reducer, {
     keyword: decodeURIComponent(initialKeyword),
     rating: initialRating,

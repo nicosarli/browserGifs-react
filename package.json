@@ -34,7 +34,9 @@
     ]
   },
   "devDependencies": {
-    "eslint-plugin-react": "^7.24.0"
+    "@testing-library/react-hooks": "^7.0.1",
+    "eslint-plugin-react": "^7.24.0",
+    "react-test-renderer": "^17.0.2"
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
