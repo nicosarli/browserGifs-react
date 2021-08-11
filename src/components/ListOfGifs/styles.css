@@ -8,6 +8,7 @@
 
 .ListOfGifs-items {
   width: 100%;
+  position: relative;
 }
 
 .ListOfGifs-items img {
